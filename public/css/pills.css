@@ -1,0 +1,572 @@
+/* Basic styling */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.card{
+    top: 10%;
+    left: 10%;
+    order: 3;
+    position: relative;
+    width: 900px;
+    height: 600px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.card .circle {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+
+}
+
+.card .circle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:  #306b71;
+    clip-path: circle(120px at center);
+    transition: 1s;
+}
+.card:hover .circle:before{
+
+
+    background:  #4ea5af;
+    clip-path: circle(800px at center)
+}
+.card img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 200px;
+    pointer-events: none;
+    transition: 0.5s;
+
+}
+.card:hover img{
+    left: 82%;
+}
+
+.card .content {
+    position: relative;
+    width: 50%;
+    left: 20%;
+    padding: 20px 20px 20px 40px;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+
+}
+.card:hover .content
+{
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+.card .content .name{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2em;
+    line-height: 1em;
+}
+.card .content .description {
+    color: #fff;
+}
+.card .content a {
+    position: relative;
+    color:#fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: #fff;
+    color: #111;
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+
+
+
+.base-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.profile-container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 2;
+    padding: 10px;
+    width: 200px;
+    height: 100%;
+    background-color: #306b71;
+    margin: 0px;
+    justify-content: space-between;
+
+}
+
+
+
+.overflow{
+
+    height: 700px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.search h2 {
+    color:#fff;
+    background: #bbbbbb;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 700;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.search ul
+{
+    position: relative;
+    background: #FFFFFF;
+}
+.search ul li{
+
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0 5px 25px rgba(0,0,0,.1);
+    transition:transform 0.5s ;
+}
+.search ul:hover li
+{
+    opacity: 0.4;
+}
+.search a {
+    padding-left: 10px;
+    color:black;
+}
+.search ul li:hover
+{
+
+    transform: scale(1.1);
+    z-index:100;
+    background: #306b71;
+    box-shadow: 0 5px 25px rgba(0,0,0,.2);
+    color:#fff;
+    opacity: 1;
+}
+#myInput {
+<!--background-image: url('/css/searchicon.png');-->
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+
+}
+
+
+.pillsearch{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    order: 2;
+
+
+}
+.pill-container {
+    margin-left: 120px;
+    margin-top: 100px;
+    height: 650px;
+    width: 850px;
+    order: 3;
+    display: flex;
+    border: 10px solid #306b71;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: space-around;
+    box-shadow: 0 5px 25px rgba(0,0,0,.2);
+    background: rgba(159,159,159,0.18);
+    align-items: center;
+    justify-content: flex-start;
+}
+.pill-container .name{
+    font-size: 30px;
+    padding-left: 50px;
+}
+.pill-container .description{
+    display: flex;
+    padding: 50px;
+    order:1;
+
+}
+.pill-container .grupy{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    font-size: 10px;
+    padding-left: 10px;
+
+}
+.pill-container .image{
+
+}
+.pill-container .image img{
+    height: 200px;
+    padding-left: 90%;
+}
+nav {
+
+    border-bottom-style: solid;
+    border-bottom-width: 12px;
+    border-bottom-color: #306b71;
+    background: rgb(255,255,255);
+    background: linear-gradient(232deg, rgba(255,255,255,1) 27%, rgba(171,200,203,1) 44%, rgba(119,166,171,1) 57%, rgba(48,107,113,1) 77%);
+
+    padding: 0 15px;
+}
+i {
+    font-size: 26px;
+}
+a {
+    color: #ACACAC;
+    text-decoration: none;
+}
+.menu,
+.submenu {
+    list-style-type: none;
+}
+.logo {
+    font-size: 20px;
+    padding: 7.5px 10px 7.5px 0;
+}
+.item {
+    padding: 10px;
+}
+.item.button {
+    padding: 9px 5px;
+}
+.item:not(.button) a:hover,
+.item a:hover::after {
+    color: #5F979E;
+}
+/* Mobile menu */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu > li a {
+    display: block;
+    padding: 15px 5px;
+}
+.menu > li.subitem a {
+    padding: 15px;
+}
+.toggle {
+    order: 1;
+    font-size: 20px;
+}
+.item.button {
+    order: 2;
+}
+.item {
+    order: 3;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+.active .item {
+    display: block;
+}
+.overflow a {
+    padding-left: 5px;
+}
+.button.secondary {
+    /* divider between buttons and menu links */
+    border-bottom: 1px #444 solid;
+}
+/* Submenu up from mobile screens */
+.submenu {
+    display: none;
+}
+.submenu-active .submenu {
+    display: block;
+}
+.has-submenu i {
+    font-size: 20px;
+}
+.has-submenu a::after {
+    font-family: "Font Awesome 5 Free";
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 900;
+    content: "\f078";
+    color: white;
+    padding-left: 5px;
+}
+.subitem a {
+    padding: 10px 15px;
+}
+.submenu-active {
+    background-color: white;
+    border-radius: 3px;
+}
+
+/* Tablet menu */
+@media all and (min-width: 700px) {
+    .menu {
+        justify-content: center;
+    }
+
+
+
+
+
+
+    .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+    }
+    .toggle {
+        flex: 1;
+        text-align: right;
+        order: 2;
+    }
+    /* Button up from tablet screen */
+    .menu li.button a {
+        padding: 10px 15px;
+        margin: 5px 0;
+    }
+    .button a {
+        background: transparent linear-gradient(180deg, #FFFFFF 0%, #46848B 60%, #397f86 100%) 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 6px #00000029;
+        border-radius: 19px;
+        border: none;
+        color: white;
+
+
+    }
+    .button.secondary {
+        border: 0;
+    }
+    .button.secondary a {
+        background: transparent linear-gradient(180deg, #FFFFFF 0%, #46848B 60%, #397f86 100%) 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 6px #00000029;
+        border-radius: 19px;
+        border: none;
+        color: white;
+    }
+    .button a:hover {
+        text-decoration: none;
+    }
+    .button:not(.secondary) a:hover {
+        background: #306b71;
+        border-color: #306b71;
+    }
+
+}
+/* Desktop menu */
+@media all and (min-width: 960px) {
+    .menu {
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        background: none;
+        padding-left: 70%;
+    }
+    .logo {
+        flex: 1;
+        height: 90px;
+        width: 170px;
+        order: 0;
+        position: absolute;
+        left: 0;
+        margin-left: 50px;
+    }
+    .item {
+        order: 1;
+        position: relative;
+        display: block;
+        width: auto;
+    }
+    .button {
+        order: 2;
+    }
+    .submenu-active .submenu {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 68px;
+        background: #306b71;;
+    }
+    .toggle {
+        display: none;
+    }
+    .submenu-active {
+        border-radius: 0;
+    }
+    .base-container {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .profile-container {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        order: 2;
+        padding: 10px;
+        width: 350px;
+        height: 100%;
+        background-color: #306b71;
+        margin: 0px;
+        justify-content: space-between;
+
+    }
+
+
+
+    .overflow{
+        height: 700px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .search h2 {
+        color:#fff;
+        background: #bbbbbb;
+        padding: 10px 20px;
+        font-size: 20px;
+        font-weight: 700;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .search ul
+    {
+        position: relative;
+        background: #FFFFFF;
+    }
+    .search ul li{
+        
+        list-style: none;
+        padding: 10px;
+        width: 100%;
+        background: #FFFFFF;
+        box-shadow: 0 5px 25px rgba(0,0,0,.1);
+        transition:transform 0.5s ;
+    }
+    .search ul:hover li
+    {
+        opacity: 0.4;
+    }
+    .search a {
+        padding-left: 10px;
+        color:black;
+    }
+.search ul li:hover
+{
+    
+    transform: scale(1.1);
+    z-index:100;
+    background: #306b71;
+    box-shadow: 0 5px 25px rgba(0,0,0,.2);
+    color:#fff;
+    opacity: 1;
+}
+    #myInput {
+        <!--background-image: url('/css/searchicon.png');-->
+        background-position: 10px 12px; 
+        background-repeat: no-repeat; 
+        width: 100%; 
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd; 
+        margin-bottom: 12px; 
+
+    }
+
+
+.pillsearch{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    order: 2;
+
+
+}
+
+}
+@media (max-width: 991px){
+    .card {
+        width: auto;
+        max-width: 350px;
+        align-items: flex-start;
+
+
+    }
+    .card:hover{
+
+        height: 600px;
+    }
+    .card .content {
+        width: 100%;
+        left: 0;
+        padding: 30px;
+    }
+
+    .card:hover img{
+        top: 82%;
+        left: 50%;
+        height: 200px;
+    }
+
+
+}
+
+@media(max-width:420px) {
+
+    .card .content {
+
+        padding: 30px;
+    }
+}
